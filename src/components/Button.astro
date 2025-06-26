@@ -1,0 +1,48 @@
+---
+// 1. DEFINE YOUR COMPONENT PROPS AS USUAL
+// The 'export interface Props' is a good practice for TypeScript support
+export interface Props {
+  variant: 'primary' | 'secondary' | 'danger';
+  size?: 'small' | 'medium' | 'large';
+  disabled?: boolean;
+  // Let's add one more to make it interesting
+  fullWidth?: boolean;
+}
+const { variant, size = 'medium', disabled = false, fullWidth = false } = Astro.props;
+
+
+// 2. THE MAGIC: EXPORT METADATA FOR THE STYLE GUIDE
+// This is the data our dynamic page will read.
+export const metadata = {
+  title: 'Button',
+  description: 'An essential component for triggering user actions and interactions.',
+  props: [
+    { name: 'variant', type: "'primary' | 'secondary' | 'danger'", required: true, description: 'The visual style of the button.' },
+    { name: 'size', type: "'small' | 'medium' | 'large'", default: "'medium'", description: 'Sets the button dimensions.' },
+    { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables all button functionality.' },
+    { name: 'fullWidth', type: 'boolean', default: 'false', description: 'Makes the button span the full width of its container.' }
+  ]
+};
+---
+
+<button
+  class:list={[
+    'button',
+    `variant-${variant}`,
+    `size-${size}`,
+    { 'full-width': fullWidth }
+  ]}
+  {disabled}
+>
+  <slot />
+</button>
+
+<style>
+  /* All your button styles go here... */
+  .button {
+    /* ... */
+  }
+  .full-width {
+    width: 100%;
+  }
+</style>

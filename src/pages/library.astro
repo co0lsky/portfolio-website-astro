@@ -1,0 +1,44 @@
+---
+// filepath: /workspaces/portfolio-website-astro/src/pages/library.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Dynamically import all .astro files in components folder and read their metadata
+const modules = import.meta.glob('../components/*.astro', { eager: true });
+let components = Object.entries(modules).map(([path, mod]) => {
+  const name = path.split('/').pop();
+  // Try to read exported metadata, fallback to filename
+  const meta = mod?.metadata || {};
+  return {
+    name,
+    title: meta.title || name,
+    description: meta.description || '',
+    props: meta.props || [],
+  };
+});
+---
+
+<BaseLayout title="Component Library">
+  <h1>Component Library</h1>
+  <p>This page lists all available components in the <code>src/components</code> folder:</p>
+  <ul>
+    {components.map(component => (
+      <li>
+        <code>{component.title}</code>
+        {component.description && <span> - {component.description}</span>}
+        {component.props.length > 0 && (
+          <ul>
+            {component.props.map(prop => (
+              <li>
+                <strong>{prop.name}</strong>
+                {prop.type && <>: <code>{prop.type}</code></>}
+                {prop.required && <> <em>(required)</em></>}
+                {prop.default && <> [default: <code>{prop.default}</code>]</>}
+                {prop.description && <> – {prop.description}</>}
+              </li>
+            ))}
+          </ul>
+        )}
+      </li>
+    ))}
+  </ul>
+</BaseLayout>
