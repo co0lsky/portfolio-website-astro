@@ -1,4 +1,6 @@
 ---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 const { title = "Portfolio Website" } = Astro.props;
 ---
 
@@ -11,15 +13,10 @@ const { title = "Portfolio Website" } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/projects">Projects</a>
-      </nav>
-    </header>
+    <Header />
     <main>
       <slot />
     </main>
-    <footer>
-      <p>&copy; {new Date().getFullYear()} My Portfolio</p>
+    <Footer />
+  </body>
+</html>
