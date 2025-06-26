@@ -6,9 +6,29 @@ export const componentMeta = {
 ---
 
 <footer>
+  <button class="footer-button">
+    Click me!
+  </button>
   <p>&copy; {new Date().getFullYear()} My Portfolio</p>
   <div>
     <a href="https://github.com/co0lsky" target="_blank" rel="noopener">GitHub</a> |
     <a href="https://linkedin.com/in/skychin" target="_blank" rel="noopener">LinkedIn</a>
   </div>
 </footer>
+
+<style>
+  .footer-button {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 20px;
+    appearance: none;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    padding: 15px 25px;
+  }
+</style>
