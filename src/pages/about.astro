@@ -2,10 +2,530 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="About Me">
-  <h1>About Me</h1>
-  <p>
-    Welcome to my portfolio website! I'm a passionate developer dedicated to building creative and efficient web solutions.
-    Here you'll find information about my skills, experience, and projects. Thank you for visiting!
-  </p>
+<BaseLayout 
+  title="About | Staff Software Engineer - Technical Leadership & Architecture Expertise"
+  description="Learn about my journey as a Staff Software Engineer, technical leadership experience, and expertise in building scalable distributed systems."
+>
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="container">
+      <div class="about-hero-content">
+        <div class="about-text">
+          <h1>Technical Leadership Through Engineering Excellence</h1>
+          <p class="lead">
+            I'm a Staff Software Engineer with a passion for solving complex technical challenges 
+            and building systems that scale. My journey spans from individual contributor to 
+            technical leader, focusing on architecture, mentorship, and engineering excellence.
+          </p>
+        </div>
+        <div class="about-visual">
+          <div class="career-timeline">
+            <div class="timeline-item">
+              <div class="timeline-year">2024</div>
+              <div class="timeline-role">Staff Software Engineer</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2021</div>
+              <div class="timeline-role">Senior Software Engineer</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2018</div>
+              <div class="timeline-role">Software Engineer</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2016</div>
+              <div class="timeline-role">Junior Developer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Philosophy Section -->
+  <section class="section">
+    <div class="container">
+      <div class="philosophy-content">
+        <div class="philosophy-text">
+          <h2>Engineering Philosophy</h2>
+          <p>
+            I believe great software engineering is about more than just writing code. It's about 
+            understanding business needs, making thoughtful architectural decisions, and building 
+            systems that can evolve with changing requirements.
+          </p>
+          <div class="philosophy-principles">
+            <div class="principle">
+              <h4>🏗️ Systems Thinking</h4>
+              <p>Design for the system, not just the feature. Consider scalability, maintainability, and operational concerns from day one.</p>
+            </div>
+            <div class="principle">
+              <h4>📈 Data-Driven Decisions</h4>
+              <p>Use metrics, monitoring, and performance data to guide architectural and optimization decisions.</p>
+            </div>
+            <div class="principle">
+              <h4>🤝 Collaborative Leadership</h4>
+              <p>Lead through influence, mentorship, and creating an environment where engineers can do their best work.</p>
+            </div>
+            <div class="principle">
+              <h4>🔄 Continuous Learning</h4>
+              <p>Stay current with technology trends while maintaining focus on fundamental engineering principles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Expertise Section -->
+  <section class="section" style="background-color: var(--surface);">
+    <div class="container">
+      <h2 class="text-center mb-8">Technical Expertise</h2>
+      <div class="expertise-grid">
+        <div class="expertise-category card">
+          <h3>Backend Engineering</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <span class="skill-name">Node.js / TypeScript</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 95%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Python</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Go</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Java</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="expertise-category card">
+          <h3>Infrastructure & DevOps</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <span class="skill-name">AWS / Cloud Architecture</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Kubernetes / Docker</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Terraform / IaC</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">CI/CD Pipelines</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 88%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="expertise-category card">
+          <h3>Databases & Data</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <span class="skill-name">PostgreSQL</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 92%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Redis / Caching</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 88%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">MongoDB</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Apache Kafka</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="expertise-category card">
+          <h3>Frontend & Mobile</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <span class="skill-name">React / Next.js</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">TypeScript</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 95%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">React Native</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 78%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Vue.js</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 70%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Highlights Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center mb-8">Key Leadership Experiences</h2>
+      <div class="experience-timeline">
+        <div class="experience-item">
+          <div class="experience-company">TechCorp</div>
+          <div class="experience-role">Staff Software Engineer</div>
+          <div class="experience-period">2021 - Present</div>
+          <div class="experience-description">
+            <p>Lead technical initiatives for a platform serving 50M+ users. Architect and implement scalable microservices, mentor team of 15 engineers, and drive engineering best practices.</p>
+            <ul class="experience-achievements">
+              <li>Designed event-driven architecture reducing system latency by 60%</li>
+              <li>Led migration to Kubernetes, improving deployment frequency by 5x</li>
+              <li>Established code review culture improving code quality metrics by 40%</li>
+              <li>Mentored 8 engineers leading to 6 promotions within 2 years</li>
+            </ul>
+            <div class="experience-tech">
+              <span class="tag">Node.js</span>
+              <span class="tag">Go</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Kubernetes</span>
+              <span class="tag">AWS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-company">StartupXYZ</div>
+          <div class="experience-role">Senior Software Engineer</div>
+          <div class="experience-period">2018 - 2021</div>
+          <div class="experience-description">
+            <p>Built core platform infrastructure from ground up for fintech startup. Designed payment processing system handling $100M+ in transactions with 99.99% availability.</p>
+            <ul class="experience-achievements">
+              <li>Architected payment processing system with sub-100ms response times</li>
+              <li>Implemented fraud detection system reducing false positives by 80%</li>
+              <li>Built CI/CD pipeline reducing deployment time from hours to minutes</li>
+              <li>Established monitoring and alerting reducing incident response time by 70%</li>
+            </ul>
+            <div class="experience-tech">
+              <span class="tag">Python</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Redis</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Jenkins</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-company">Enterprise Solutions Inc</div>
+          <div class="experience-role">Software Engineer</div>
+          <div class="experience-period">2016 - 2018</div>
+          <div class="experience-description">
+            <p>Developed enterprise web applications and learned fundamentals of scalable system design. Contributed to projects serving Fortune 500 clients.</p>
+            <ul class="experience-achievements">
+              <li>Built REST APIs serving 1M+ requests per day</li>
+              <li>Optimized database queries improving application performance by 50%</li>
+              <li>Implemented automated testing increasing code coverage to 85%</li>
+              <li>Participated in on-call rotation maintaining 99.5% uptime</li>
+            </ul>
+            <div class="experience-tech">
+              <span class="tag">Java</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Angular</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personal Section -->
+  <section class="section" style="background-color: var(--surface);">
+    <div class="container">
+      <div class="personal-content">
+        <h2 class="text-center mb-8">Beyond Engineering</h2>
+        <div class="personal-grid">
+          <div class="personal-item">
+            <h4>🎯 Continuous Learning</h4>
+            <p>Currently exploring distributed systems research papers, contributing to open-source projects, and staying updated with emerging technologies like WebAssembly and edge computing.</p>
+          </div>
+          <div class="personal-item">
+            <h4>🗣️ Knowledge Sharing</h4>
+            <p>Regular speaker at engineering conferences and meetups. Topics include system architecture, performance optimization, and engineering leadership.</p>
+          </div>
+          <div class="personal-item">
+            <h4>🌱 Mentorship</h4>
+            <p>Passionate about growing the next generation of engineers. Volunteer mentor for coding bootcamps and maintain an engineering blog with 10K+ monthly readers.</p>
+          </div>
+          <div class="personal-item">
+            <h4>🔬 Side Projects</h4>
+            <p>Build and maintain several open-source tools used by thousands of developers. Always experimenting with new technologies and architectural patterns.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .about-hero {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  }
+
+  .about-hero-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .about-text h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+  }
+
+  .career-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+  }
+
+  .timeline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--surface);
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--accent-color);
+  }
+
+  .timeline-year {
+    font-weight: 700;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+  }
+
+  .timeline-role {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .philosophy-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .philosophy-principles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .principle h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+  }
+
+  .principle p {
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
+
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .expertise-category h3 {
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+  }
+
+  .skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .skill-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+  }
+
+  .skill-bar {
+    height: 8px;
+    background-color: var(--border-light);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color), #60a5fa);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+  }
+
+  .experience-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .experience-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--accent-color);
+  }
+
+  .experience-company {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+
+  .experience-role {
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+  }
+
+  .experience-period {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+
+  .experience-description p {
+    margin-bottom: 1.5rem;
+  }
+
+  .experience-achievements {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .experience-achievements li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+  }
+
+  .experience-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .personal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .personal-item h4 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+
+  .personal-item p {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .about-hero-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .about-text h1 {
+      font-size: 2.25rem;
+    }
+
+    .philosophy-principles {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .expertise-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .experience-item {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .personal-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .timeline-item {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.5rem;
+    }
+  }
+</style>
