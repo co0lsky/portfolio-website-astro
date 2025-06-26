@@ -1,44 +1,554 @@
 ---
-// filepath: /workspaces/portfolio-website-astro/src/pages/library.astro
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import SkillBar from '../components/SkillBar.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 
 // Dynamically import all .astro files in components folder and read their metadata
 const modules = import.meta.glob('../components/*.astro', { eager: true });
 let components = Object.entries(modules).map(([path, mod]) => {
-  const name = path.split('/').pop();
-  // Try to read exported component metadata, fallback to filename
+  const name = path.split('/').pop()?.replace('.astro', '') || '';
   const meta = mod?.componentMeta || {};
   return {
     name,
     title: meta.title || name,
     description: meta.description || '',
     props: meta.props || [],
+    path
   };
-});
+}).sort((a, b) => a.title.localeCompare(b.title));
 ---
 
-<BaseLayout title="Component Library">
-  <h1>Component Library</h1>
-  <p>This page lists all available components in the <code>src/components</code> folder:</p>
-  <ul>
-    {components.map(component => (
-      <li>
-        <code>{component.title}</code>
-        {component.description && <span> - {component.description}</span>}
-        {component.props.length > 0 && (
+<BaseLayout 
+  title="Component Library | Design System Documentation"
+  description="Professional component library showcasing reusable UI components with live examples and technical documentation."
+>
+  <!-- Hero Section -->
+  <section class="library-hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Component Library</h1>
+        <p class="lead">
+          A collection of reusable, accessible UI components built with modern web standards. 
+          Each component is designed for scalability, maintainability, and developer experience.
+        </p>
+        <div class="library-stats">
+          <div class="stat">
+            <div class="stat-number">{components.length}</div>
+            <div class="stat-label">Components</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">TypeScript Ready</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">A11Y</div>
+            <div class="stat-label">Accessible</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Components Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="components-grid">
+        <!-- Button Component -->
+        <div class="component-card card" id="button">
+          <div class="component-header">
+            <h2>Button</h2>
+            <span class="component-type">Interactive</span>
+          </div>
+          <p class="component-description">
+            Essential component for triggering user actions and interactions. Supports multiple variants, sizes, and states.
+          </p>
+          
+          <div class="component-examples">
+            <h3>Examples</h3>
+            <div class="example-group">
+              <div class="example-item">
+                <Button variant="primary" size="medium">Primary Button</Button>
+                <code class="example-code">&lt;Button variant="primary"&gt;Primary Button&lt;/Button&gt;</code>
+              </div>
+              <div class="example-item">
+                <Button variant="secondary" size="medium">Secondary Button</Button>
+                <code class="example-code">&lt;Button variant="secondary"&gt;Secondary Button&lt;/Button&gt;</code>
+              </div>
+              <div class="example-item">
+                <Button variant="danger" size="small">Danger</Button>
+                <code class="example-code">&lt;Button variant="danger" size="small"&gt;Danger&lt;/Button&gt;</code>
+              </div>
+            </div>
+          </div>
+
+          <div class="component-props">
+            <h3>Properties</h3>
+            <div class="props-table">
+              <div class="prop-row prop-header">
+                <span>Property</span>
+                <span>Type</span>
+                <span>Default</span>
+                <span>Description</span>
+              </div>
+              <div class="prop-row">
+                <span class="prop-name">variant</span>
+                <span class="prop-type">'primary' | 'secondary' | 'danger'</span>
+                <span class="prop-default">-</span>
+                <span class="prop-desc">Visual style of the button</span>
+              </div>
+              <div class="prop-row">
+                <span class="prop-name">size</span>
+                <span class="prop-type">'small' | 'medium' | 'large'</span>
+                <span class="prop-default">'medium'</span>
+                <span class="prop-desc">Button dimensions</span>
+              </div>
+              <div class="prop-row">
+                <span class="prop-name">disabled</span>
+                <span class="prop-type">boolean</span>
+                <span class="prop-default">false</span>
+                <span class="prop-desc">Disables button functionality</span>
+              </div>
+              <div class="prop-row">
+                <span class="prop-name">fullWidth</span>
+                <span class="prop-type">boolean</span>
+                <span class="prop-default">false</span>
+                <span class="prop-desc">Makes button span full width</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SkillBar Component -->
+        <div class="component-card card" id="skillbar">
+          <div class="component-header">
+            <h2>SkillBar</h2>
+            <span class="component-type">Data Visualization</span>
+          </div>
+          <p class="component-description">
+            Visual skill level indicator for showcasing technical expertise with animated progress bars.
+          </p>
+          
+          <div class="component-examples">
+            <h3>Examples</h3>
+            <div class="example-group">
+              <div class="example-item">
+                <SkillBar skill="Vue.js" level={95} category="Frontend" />
+                <code class="example-code">&lt;SkillBar skill="Vue.js" level={95} category="Frontend" /&gt;</code>
+              </div>
+              <div class="example-item">
+                <SkillBar skill="Node.js" level={88} />
+                <code class="example-code">&lt;SkillBar skill="Node.js" level={88} /&gt;</code>
+              </div>
+            </div>
+          </div>
+
+          <div class="component-props">
+            <h3>Properties</h3>
+            <div class="props-table">
+              <div class="prop-row prop-header">
+                <span>Property</span>
+                <span>Type</span>
+                <span>Default</span>
+                <span>Description</span>
+              </div>
+              <div class="prop-row">
+                <span class="prop-name">skill</span>
+                <span class="prop-type">string</span>
+                <span class="prop-default">-</span>
+                <span class="prop-desc">Name of the skill or technology</span>
+              </div>
+              <div class="prop-row">
+                <span class="prop-name">level</span>
+                <span class="prop-type">number</span>
+                <span class="prop-default">-</span>
+                <span class="prop-desc">Skill level from 0-100</span>
+              </div>
+              <div class="prop-row">
+                <span class="prop-name">category</span>
+                <span class="prop-type">string</span>
+                <span class="prop-default">undefined</span>
+                <span class="prop-desc">Optional category for the skill</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ProjectCard Component -->
+        <div class="component-card card" id="projectcard">
+          <div class="component-header">
+            <h2>ProjectCard</h2>
+            <span class="component-type">Content</span>
+          </div>
+          <p class="component-description">
+            Reusable card component for displaying technical projects with metrics, technologies, and optional links.
+          </p>
+          
+          <div class="component-examples">
+            <h3>Examples</h3>
+            <div class="example-group">
+              <div class="example-item">
+                <ProjectCard 
+                  title="Example Project"
+                  description="A sample project demonstrating the ProjectCard component with metrics and technology tags."
+                  technologies={["Vue.js", "Node.js", "PostgreSQL"]}
+                  metrics={["100K+ users", "99.9% uptime"]}
+                  featured={true}
+                />
+                <code class="example-code">
+&lt;ProjectCard 
+  title="Example Project"
+  description="A sample project..."
+  technologies={["Vue.js", "Node.js"]}
+  metrics={["100K+ users"]}
+  featured={true}
+/&gt;
+                </code>
+              </div>
+            </div>
+          </div>
+
+          <div class="component-props">
+            <h3>Properties</h3>
+            <div class="props-table">
+              <div class="prop-row prop-header">
+                <span>Property</span>
+                <span>Type</span>
+                <span>Default</span>
+                <span>Description</span>
+              </div>
+              <div class="prop-row">
+                <span class="prop-name">title</span>
+                <span class="prop-type">string</span>
+                <span class="prop-default">-</span>
+                <span class="prop-desc">The project title</span>
+              </div>
+              <div class="prop-row">
+                <span class="prop-name">description</span>
+                <span class="prop-type">string</span>
+                <span class="prop-default">-</span>
+                <span class="prop-desc">Project description</span>
+              </div>
+              <div class="prop-row">
+                <span class="prop-name">technologies</span>
+                <span class="prop-type">string[]</span>
+                <span class="prop-default">-</span>
+                <span class="prop-desc">Array of technologies used</span>
+              </div>
+              <div class="prop-row">
+                <span class="prop-name">metrics</span>
+                <span class="prop-type">string[]</span>
+                <span class="prop-default">[]</span>
+                <span class="prop-desc">Optional array of project metrics</span>
+              </div>
+              <div class="prop-row">
+                <span class="prop-name">featured</span>
+                <span class="prop-type">boolean</span>
+                <span class="prop-default">false</span>
+                <span class="prop-desc">Whether this is a featured project</span>
+              </div>
+              <div class="prop-row">
+                <span class="prop-name">link</span>
+                <span class="prop-type">string</span>
+                <span class="prop-default">undefined</span>
+                <span class="prop-desc">Optional link to project details</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Guidelines -->
+  <section class="section" style="background-color: var(--surface);">
+    <div class="container">
+      <h2 class="text-center mb-8">Design Guidelines</h2>
+      <div class="guidelines-grid">
+        <div class="guideline card">
+          <h3>🎨 Color System</h3>
+          <p>Uses CSS custom properties for consistent theming across all components.</p>
+          <div class="color-palette">
+            <div class="color-swatch" style="background-color: var(--primary-color);">
+              <span>Primary</span>
+            </div>
+            <div class="color-swatch" style="background-color: var(--accent-color);">
+              <span>Accent</span>
+            </div>
+            <div class="color-swatch" style="background-color: var(--success);">
+              <span>Success</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="guideline card">
+          <h3>📱 Responsive Design</h3>
+          <p>All components are built mobile-first with responsive breakpoints at 768px and 1024px.</p>
           <ul>
-            {component.props.map(prop => (
-              <li>
-                <strong>{prop.name}</strong>
-                {prop.type && <>: <code>{prop.type}</code></>}
-                {prop.required && <> <em>(required)</em></>}
-                {prop.default && <> [default: <code>{prop.default}</code>]</>}
-                {prop.description && <> – {prop.description}</>}
-              </li>
-            ))}
+            <li>Mobile: &lt; 768px</li>
+            <li>Tablet: 768px - 1024px</li>
+            <li>Desktop: &gt; 1024px</li>
           </ul>
-        )}
-      </li>
-    ))}
-  </ul>
+        </div>
+        
+        <div class="guideline card">
+          <h3>♿ Accessibility</h3>
+          <p>Components follow WCAG 2.1 guidelines with semantic HTML and proper ARIA attributes.</p>
+          <ul>
+            <li>Keyboard navigation support</li>
+            <li>Screen reader compatibility</li>
+            <li>High contrast color ratios</li>
+            <li>Focus management</li>
+          </ul>
+        </div>
+        
+        <div class="guideline card">
+          <h3>⚡ Performance</h3>
+          <p>Optimized for performance with minimal CSS and efficient component architecture.</p>
+          <ul>
+            <li>CSS-in-Astro for optimal bundling</li>
+            <li>Minimal JavaScript footprint</li>
+            <li>Tree-shakeable components</li>
+            <li>Efficient animations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .library-hero {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  }
+
+  .hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .library-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-top: 0.5rem;
+  }
+
+  .components-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .component-card {
+    position: relative;
+  }
+
+  .component-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .component-header h2 {
+    margin-bottom: 0;
+    color: var(--primary-color);
+  }
+
+  .component-type {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .component-description {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+  }
+
+  .component-examples h3,
+  .component-props h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+
+  .example-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .example-item {
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    background-color: var(--surface);
+  }
+
+  .example-code {
+    display: block;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 0.25rem;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.875rem;
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  .props-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+    gap: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .prop-row {
+    display: contents;
+  }
+
+  .prop-header {
+    font-weight: 600;
+    background-color: var(--surface);
+  }
+
+  .prop-row > span {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .prop-name {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-weight: 600;
+    color: var(--accent-color);
+  }
+
+  .prop-type {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+
+  .prop-default {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+
+  .prop-desc {
+    color: var(--text-secondary);
+  }
+
+  .guidelines-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .guideline h3 {
+    margin-bottom: 1rem;
+  }
+
+  .guideline ul {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .guideline li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+  }
+
+  .color-palette {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .color-swatch {
+    width: 80px;
+    height: 60px;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding: 0.5rem;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  @media (max-width: 768px) {
+    .library-stats {
+      gap: 1.5rem;
+    }
+
+    .stat-number {
+      font-size: 1.5rem;
+    }
+
+    .props-table {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .prop-row > span {
+      border-bottom: none;
+      border-top: 1px solid var(--border);
+    }
+
+    .prop-row:first-child > span {
+      border-top: none;
+    }
+
+    .guidelines-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .color-palette {
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .guidelines-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
