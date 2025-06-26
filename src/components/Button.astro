@@ -11,9 +11,9 @@ export interface Props {
 const { variant, size = 'medium', disabled = false, fullWidth = false } = Astro.props;
 
 
-// 2. THE MAGIC: EXPORT METADATA FOR THE STYLE GUIDE
+// 2. THE MAGIC: EXPORT COMPONENT METADATA FOR THE STYLE GUIDE
 // This is the data our dynamic page will read.
-export const metadata = {
+export const componentMeta = {
   title: 'Button',
   description: 'An essential component for triggering user actions and interactions.',
   props: [

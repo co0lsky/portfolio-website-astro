@@ -6,8 +6,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const modules = import.meta.glob('../components/*.astro', { eager: true });
 let components = Object.entries(modules).map(([path, mod]) => {
   const name = path.split('/').pop();
-  // Try to read exported metadata, fallback to filename
-  const meta = mod?.metadata || {};
+  // Try to read exported component metadata, fallback to filename
+  const meta = mod?.componentMeta || {};
   return {
     name,
     title: meta.title || name,
