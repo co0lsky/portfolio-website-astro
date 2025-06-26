@@ -1,10 +1,446 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
 ---
 
-<BaseLayout title="Home">
-  <h1>Welcome to My Portfolio</h1>
-  <p>
-    Explore my projects, learn more about me, and see what I can do as a developer!
-  </p>
+<BaseLayout 
+  title="Staff Software Engineer | Technical Leadership & System Architecture"
+  description="Staff-level software engineer specializing in scalable system architecture, technical leadership, and high-impact engineering solutions. Available for senior engineering roles."
+>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            Staff Software Engineer<br>
+            <span class="highlight">Architecting Scalable Solutions</span>
+          </h1>
+          <p class="hero-description lead">
+            Technical leader with 8+ years building distributed systems that serve millions of users. 
+            Specialized in <strong>system architecture</strong>, <strong>performance optimization</strong>, and 
+            <strong>engineering team leadership</strong>.
+          </p>
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="stat-number">50M+</div>
+              <div class="stat-label">Users Served</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">99.9%</div>
+              <div class="stat-label">Uptime Achieved</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">20+</div>
+              <div class="stat-label">Engineers Mentored</div>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a href="/projects" class="btn btn-primary">View Technical Projects</a>
+            <a href="/about" class="btn btn-secondary">Technical Background</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="tech-stack-visual">
+            <div class="tech-category">
+              <h4>Backend & Infrastructure</h4>
+              <div class="tech-tags">
+                <span class="tag tag-primary">Node.js</span>
+                <span class="tag tag-primary">Python</span>
+                <span class="tag tag-primary">Go</span>
+                <span class="tag tag-primary">Kubernetes</span>
+                <span class="tag tag-primary">AWS</span>
+              </div>
+            </div>
+            <div class="tech-category">
+              <h4>Data & Databases</h4>
+              <div class="tech-tags">
+                <span class="tag tag-primary">PostgreSQL</span>
+                <span class="tag tag-primary">Redis</span>
+                <span class="tag tag-primary">MongoDB</span>
+                <span class="tag tag-primary">Apache Kafka</span>
+              </div>
+            </div>
+            <div class="tech-category">
+              <h4>Frontend & Mobile</h4>
+              <div class="tech-tags">
+                <span class="tag tag-primary">React</span>
+                <span class="tag tag-primary">TypeScript</span>
+                <span class="tag tag-primary">Next.js</span>
+                <span class="tag tag-primary">React Native</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Competencies Section -->
+  <section class="section" style="background-color: var(--surface);">
+    <div class="container">
+      <div class="text-center mb-8">
+        <h2>Technical Leadership Expertise</h2>
+        <p class="lead">Core competencies that drive engineering excellence and business impact</p>
+      </div>
+      <div class="grid grid-cols-3 gap-6">
+        <div class="card">
+          <div class="competency-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+              <line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+          </div>
+          <h3>System Architecture</h3>
+          <p>Design and implement scalable distributed systems handling millions of requests. Expert in microservices, event-driven architecture, and cloud-native solutions.</p>
+          <div class="competency-highlights">
+            <span class="tag">Microservices</span>
+            <span class="tag">Event Sourcing</span>
+            <span class="tag">CQRS</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="competency-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="m22 21-3-3"/>
+              <circle cx="17" cy="17" r="3"/>
+            </svg>
+          </div>
+          <h3>Technical Leadership</h3>
+          <p>Lead engineering teams and drive technical strategy. Mentor engineers, establish best practices, and make critical architectural decisions.</p>
+          <div class="competency-highlights">
+            <span class="tag">Team Leadership</span>
+            <span class="tag">Code Reviews</span>
+            <span class="tag">Mentoring</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="competency-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <h3>Performance Engineering</h3>
+          <p>Optimize system performance for scale. Experience with caching strategies, database optimization, and infrastructure cost reduction.</p>
+          <div class="competency-highlights">
+            <span class="tag">Caching</span>
+            <span class="tag">Database Tuning</span>
+            <span class="tag">Load Testing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Achievements Section -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-8">
+        <h2>Recent Engineering Achievements</h2>
+        <p class="lead">High-impact projects that demonstrate technical excellence and business results</p>
+      </div>
+      <div class="achievements-grid">
+        <div class="achievement-card card">
+          <div class="achievement-header">
+            <h3>Distributed Payment System Redesign</h3>
+            <span class="tag tag-primary">Architecture Leadership</span>
+          </div>
+          <p>Led the redesign of payment processing system to handle 10x traffic increase. Implemented event-driven architecture with eventual consistency, reducing processing time by 70%.</p>
+          <div class="achievement-metrics">
+            <div class="metric">
+              <span class="metric-value">70%</span>
+              <span class="metric-label">Faster Processing</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">99.99%</span>
+              <span class="metric-label">Availability</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">$2M</span>
+              <span class="metric-label">Cost Savings</span>
+            </div>
+          </div>
+          <div class="achievement-tech">
+            <span class="tag">Go</span>
+            <span class="tag">Apache Kafka</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Redis</span>
+          </div>
+        </div>
+        
+        <div class="achievement-card card">
+          <div class="achievement-header">
+            <h3>Engineering Team Scaling</h3>
+            <span class="tag tag-primary">Leadership</span>
+          </div>
+          <p>Built and led a cross-functional engineering team of 15 developers. Established code review processes, CI/CD pipelines, and engineering standards that improved delivery velocity by 3x.</p>
+          <div class="achievement-metrics">
+            <div class="metric">
+              <span class="metric-value">3x</span>
+              <span class="metric-label">Delivery Speed</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">90%</span>
+              <span class="metric-label">Test Coverage</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">15</span>
+              <span class="metric-label">Team Members</span>
+            </div>
+          </div>
+          <div class="achievement-tech">
+            <span class="tag">GitHub Actions</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Terraform</span>
+            <span class="tag">SonarQube</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Tackle Complex Engineering Challenges</h2>
+        <p class="lead">
+          Looking for opportunities to lead technical initiatives, architect scalable systems, 
+          and mentor engineering teams in a fast-growing technology company.
+        </p>
+        <div class="cta-actions">
+          <a href="/projects" class="btn btn-primary">Explore Technical Projects</a>
+          <a href="#contact" class="btn btn-secondary">Schedule Technical Discussion</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .hero-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    max-width: 600px;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-top: 0.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .tech-stack-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .tech-category h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .competency-icon {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+  }
+
+  .competency-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .achievement-card {
+    position: relative;
+  }
+
+  .achievement-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .achievement-header h3 {
+    margin-bottom: 0;
+    flex: 1;
+    margin-right: 1rem;
+  }
+
+  .achievement-metrics {
+    display: flex;
+    gap: 2rem;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background-color: var(--surface);
+    border-radius: 0.5rem;
+  }
+
+  .metric {
+    text-align: center;
+  }
+
+  .metric-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    line-height: 1;
+  }
+
+  .metric-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+  }
+
+  .achievement-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .cta-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+  }
+
+  .cta-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .cta-content h2 {
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-content .lead {
+    color: #e2e8f0;
+    margin-bottom: 3rem;
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 4rem 0;
+    }
+
+    .hero-content {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-stats {
+      gap: 1.5rem;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+    }
+
+    .achievements-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .achievement-metrics {
+      gap: 1rem;
+    }
+
+    .metric-value {
+      font-size: 1.25rem;
+    }
+
+    .cta-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .achievement-header {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .achievement-header h3 {
+      margin-right: 0;
+    }
+  }
+</style>
