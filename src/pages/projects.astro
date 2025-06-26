@@ -2,20 +2,751 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Projects">
-  <h1>Projects</h1>
-  <p>
-    Here are some of the projects I have worked on. Each project showcases my skills and dedication to delivering quality solutions.
-  </p>
-  <ul>
-    <li>
-      <strong>Project One:</strong> A web application for managing tasks efficiently.
-    </li>
-    <li>
-      <strong>Project Two:</strong> A responsive portfolio website built with Astro.
-    </li>
-    <li>
-      <strong>Project Three:</strong> An API service for real-time data processing.
-    </li>
-  </ul>
+<BaseLayout
+  title="Technical Projects | Staff Software Engineer - Scalable Systems & Architecture"
+  description="Explore high-impact technical projects demonstrating system architecture, performance optimization, and engineering leadership at scale."
+>
+  <!-- Hero Section -->
+  <section class="projects-hero">
+    <div class="container">
+      <div class="hero-content text-center">
+        <h1>Technical Projects & Achievements</h1>
+        <p class="lead">
+          Showcasing systems that handle millions of users, process billions of transactions,
+          and solve complex engineering challenges at scale.
+        </p>
+        <div class="project-stats">
+          <div class="stat">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Major Projects Led</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">$10M+</div>
+            <div class="stat-label">Cost Savings Delivered</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">99.99%</div>
+            <div class="stat-label">Average Uptime</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center mb-8">Featured Engineering Projects</h2>
+
+      <!-- Project 1: Marketing Infrastructure Platform -->
+      <div class="project-featured">
+        <div class="project-content">
+          <div class="project-header">
+            <div class="project-title">
+              <h3>Component-Based Marketing Infrastructure</h3>
+              <div class="project-badges">
+                <span class="badge badge-primary">Engineering Management</span>
+                <span class="badge badge-secondary">Platform Engineering</span>
+              </div>
+            </div>
+            <div class="project-impact">
+              <div class="impact-metric">
+                <span class="metric-value">80%</span>
+                <span class="metric-label">Company Revenue Powered</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-description">
+            <p>
+              Led team of 6 engineers building marketing infrastructure that powers 80% of Mindvalley's revenue.
+              Created component-based system enabling non-technical teams to launch full-featured marketing pages
+              in under 8 hours, revolutionizing how the company deploys marketing campaigns.
+            </p>
+          </div>
+
+          <div class="project-details">
+            <div class="detail-section">
+              <h4>🏗️ System Architecture</h4>
+              <ul>
+                <li><strong>Component System:</strong> Reusable Vue.js components managed through Storyblok CMS</li>
+                <li><strong>Sales Funnels:</strong> Built 7 major funnels including VSL & Masterclass systems</li>
+                <li><strong>Flexible Checkout:</strong> CMS-configurable checkout supporting multiple payment methods</li>
+                <li><strong>Personalization:</strong> Dynamic content based on user behavior and funnel context</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h4>📊 Business Impact</h4>
+              <div class="metrics-grid">
+                <div class="metric-card">
+                  <span class="metric-title">Page Launch Time</span>
+                  <span class="metric-change">8 Hours</span>
+                  <span class="metric-detail">Down from weeks</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-title">CMS Pages</span>
+                  <span class="metric-change">9,000+</span>
+                  <span class="metric-detail">5,000+ active</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-title">Core Web Vitals</span>
+                  <span class="metric-change">3s LCP</span>
+                  <span class="metric-detail">P75 performance</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-title">Sales Funnels</span>
+                  <span class="metric-change">7 Major</span>
+                  <span class="metric-detail">Revenue streams</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-tech">
+            <h4>Technology Stack</h4>
+            <div class="tech-stack">
+              <div class="tech-category">
+                <span class="tech-label">Frontend:</span>
+                <div class="tech-tags">
+                  <span class="tag">Vue.js</span>
+                  <span class="tag">Nuxt.js</span>
+                  <span class="tag">Tailwind CSS</span>
+                </div>
+              </div>
+              <div class="tech-category">
+                <span class="tech-label">CMS & Backend:</span>
+                <div class="tech-tags">
+                  <span class="tag">Storyblok</span>
+                  <span class="tag">Node.js</span>
+                  <span class="tag">GraphQL</span>
+                </div>
+              </div>
+              <div class="tech-category">
+                <span class="tech-label">Infrastructure:</span>
+                <div class="tech-tags">
+                  <span class="tag">GCP App Engine</span>
+                  <span class="tag">Spinnaker</span>
+                  <span class="tag">Fastly CDN</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: Content Discovery Platform -->
+      <div class="project-featured">
+        <div class="project-content">
+          <div class="project-header">
+            <div class="project-title">
+              <h3>Content Discovery & Recommendation Engine</h3>
+              <div class="project-badges">
+                <span class="badge badge-primary">Technical Leadership</span>
+                <span class="badge badge-secondary">Team Transformation</span>
+              </div>
+            </div>
+            <div class="project-impact">
+              <div class="impact-metric">
+                <span class="metric-value">300K+</span>
+                <span class="metric-label">Monthly Active Users</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-description">
+            <p>
+              Led team of 5 engineers building content discovery experience for 300K+ Monthly Active Users.
+              Transformed team dynamics from "treading water" to "repaying debt" state, improving technical
+              health while delivering key architectural initiatives that became widely adopted across the organization.
+            </p>
+          </div>
+
+          <div class="project-details">
+            <div class="detail-section">
+              <h4>🔧 Key Architectural Initiatives</h4>
+              <ul>
+                <li><strong>User Profile Service:</strong> Unified service enabling seamless user experience across products</li>
+                <li><strong>ML Recommendation:</strong> Collaborated with ML vendor to significantly improve content discovery</li>
+                <li><strong>Feature Flags:</strong> Introduced and championed adoption across core applications</li>
+                <li><strong>Design System:</strong> Supported development and organization-wide adoption</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h4>🎯 Performance & Process Improvements</h4>
+              <div class="metrics-grid">
+                <div class="metric-card">
+                  <span class="metric-title">Loading Speed</span>
+                  <span class="metric-change">+30%</span>
+                  <span class="metric-detail">CDN optimization</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-title">Deploy Frequency</span>
+                  <span class="metric-change">Daily</span>
+                  <span class="metric-detail">From weekly</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-title">Team State</span>
+                  <span class="metric-change">Repaying Debt</span>
+                  <span class="metric-detail">From treading water</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-title">Sprint Monitoring</span>
+                  <span class="metric-change">Dashboard</span>
+                  <span class="metric-detail">Jira + Data Studio</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-tech">
+            <h4>Technology Stack</h4>
+            <div class="tech-stack">
+              <div class="tech-category">
+                <span class="tech-label">Backend:</span>
+                <div class="tech-tags">
+                  <span class="tag">Elixir</span>
+                  <span class="tag">Phoenix LiveView</span>
+                  <span class="tag">PostgreSQL</span>
+                </div>
+              </div>
+              <div class="tech-category">
+                <span class="tech-label">Frontend:</span>
+                <div class="tech-tags">
+                  <span class="tag">Alpine.js</span>
+                  <span class="tag">Tailwind CSS</span>
+                  <span class="tag">JavaScript</span>
+                </div>
+              </div>
+              <div class="tech-category">
+                <span class="tech-label">Infrastructure:</span>
+                <div class="tech-tags">
+                  <span class="tag">GCP</span>
+                  <span class="tag">Spinnaker</span>
+                  <span class="tag">GraphQL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: AVANA E-commerce Platform -->
+      <div class="project-featured">
+        <div class="project-content">
+          <div class="project-header">
+            <div class="project-title">
+              <h3>E-commerce Platform for Small Businesses</h3>
+              <div class="project-badges">
+                <span class="badge badge-primary">VP Engineering</span>
+                <span class="badge badge-secondary">Team Leadership</span>
+              </div>
+            </div>
+            <div class="project-impact">
+              <div class="impact-metric">
+                <span class="metric-value">30K</span>
+                <span class="metric-label">Small Businesses</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-description">
+            <p>
+              Led team of 12 engineers and designers building comprehensive e-commerce platform serving 30,000 small businesses.
+              Introduced SCRUM methodology, established Success Engineer role, and transformed delivery cadence from
+              bi-weekly to on-demand deployments.
+            </p>
+          </div>
+
+          <div class="project-details">
+            <div class="detail-section">
+              <h4>🏗️ Leadership & Process Improvements</h4>
+              <ul>
+                <li><strong>SCRUM Implementation:</strong> Organized team workflows and improved project visibility</li>
+                <li><strong>Success Engineer Role:</strong> Reduced cognitive load on development team</li>
+                <li><strong>Payment Integration:</strong> Integrated multiple payment gateways (FPX, 2C2P, Doku)</li>
+                <li><strong>Deployment Pipeline:</strong> Streamlined from bi-weekly to on-demand releases</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h4>📈 Platform Impact</h4>
+              <div class="metrics-grid">
+                <div class="metric-card">
+                  <span class="metric-title">Business Users</span>
+                  <span class="metric-change">30K</span>
+                  <span class="metric-detail">Small businesses</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-title">Team Size</span>
+                  <span class="metric-change">12</span>
+                  <span class="metric-detail">Engineers & designers</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-title">Deployment</span>
+                  <span class="metric-change">On-demand</span>
+                  <span class="metric-detail">From bi-weekly</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-title">Support Load</span>
+                  <span class="metric-change">Reduced</span>
+                  <span class="metric-detail">Success Engineer</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-tech">
+            <h4>Technology Stack</h4>
+            <div class="tech-stack">
+              <div class="tech-category">
+                <span class="tech-label">Backend:</span>
+                <div class="tech-tags">
+                  <span class="tag">PHP</span>
+                  <span class="tag">Laravel</span>
+                  <span class="tag">MySQL</span>
+                </div>
+              </div>
+              <div class="tech-category">
+                <span class="tech-label">Payments:</span>
+                <div class="tech-tags">
+                  <span class="tag">FPX</span>
+                  <span class="tag">2C2P</span>
+                  <span class="tag">Doku</span>
+                </div>
+              </div>
+              <div class="tech-category">
+                <span class="tech-label">Infrastructure:</span>
+                <div class="tech-tags">
+                  <span class="tag">AWS EC2</span>
+                  <span class="tag">Git</span>
+                  <span class="tag">JavaScript</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Projects Section -->
+  <section class="section" style="background-color: var(--surface);">
+    <div class="container">
+      <h2 class="text-center mb-8">Additional Technical Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card card">
+          <h3>Mobile App Development</h3>
+          <p>Built multiple mobile applications including GSC cinema app, Oxford Fajar educational app, and various corporate microsites during team lead role at Vintedge.</p>
+          <div class="project-metrics">
+            <span class="metric">GSC mobile app</span>
+            <span class="metric">Oxford Fajar app</span>
+            <span class="metric">Samsung microsites</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Android</span>
+            <span class="tag">Objective-C</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">Git</span>
+          </div>
+        </div>
+
+        <div class="project-card card">
+          <h3>Core Web Vitals Dashboard</h3>
+          <p>Developed comprehensive performance monitoring dashboard for SEO & Ads teams, achieving 3s LCP (P75) performance targets.</p>
+          <div class="project-metrics">
+            <span class="metric">3s LCP achieved</span>
+            <span class="metric">SEO optimization</span>
+            <span class="metric">Real-time monitoring</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Performance</span>
+            <span class="tag">SEO</span>
+            <span class="tag">Analytics</span>
+            <span class="tag">Monitoring</span>
+          </div>
+        </div>
+
+        <div class="project-card card">
+          <h3>Payment Gateway Integration</h3>
+          <p>Integrated multiple Southeast Asian payment gateways including FPX, 2C2P, and Doku for Indonesian market during AVANA backend development.</p>
+          <div class="project-metrics">
+            <span class="metric">FPX integration</span>
+            <span class="metric">2C2P payment</span>
+            <span class="metric">Doku Indonesia</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">PHP</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">Payment APIs</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </div>
+
+        <div class="project-card card">
+          <h3>Team Dashboard & Analytics</h3>
+          <p>Rolled out comprehensive team performance dashboard using Jira, Google Spreadsheet, and Data Studio to monitor sprint performance and identify improvement areas.</p>
+          <div class="project-metrics">
+            <span class="metric">Sprint monitoring</span>
+            <span class="metric">Performance tracking</span>
+            <span class="metric">Process improvement</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Jira</span>
+            <span class="tag">Google Sheets</span>
+            <span class="tag">Data Studio</span>
+            <span class="tag">Analytics</span>
+          </div>
+        </div>
+
+        <div class="project-card card">
+          <h3>Enterprise Java Applications</h3>
+          <p>Developed enterprise software solutions using Java and Oracle databases during early career at Eluon Seenergy, focusing on business application development.</p>
+          <div class="project-metrics">
+            <span class="metric">Enterprise apps</span>
+            <span class="metric">Oracle integration</span>
+            <span class="metric">Business solutions</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Java</span>
+            <span class="tag">Oracle</span>
+            <span class="tag">Enterprise</span>
+            <span class="tag">Backend</span>
+          </div>
+        </div>
+
+        <div class="project-card card">
+          <h3>Technical Writing & Mentorship</h3>
+          <p>Published articles on Medium about setting up development teams for early and growth stage startups, sharing engineering leadership insights.</p>
+          <div class="project-metrics">
+            <span class="metric">Medium articles</span>
+            <span class="metric">Team setup guides</span>
+            <span class="metric">Leadership insights</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Technical Writing</span>
+            <span class="tag">Leadership</span>
+            <span class="tag">Mentorship</span>
+            <span class="tag">Team Building</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .projects-hero {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  }
+
+  .project-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 3rem;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-top: 0.5rem;
+  }
+
+  .project-featured {
+    margin-bottom: 4rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+  }
+
+  .project-content {
+    padding: 3rem;
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+
+  .project-title h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+
+  .project-badges {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .badge-primary {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: var(--accent-color);
+  }
+
+  .badge-secondary {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--success);
+  }
+
+  .project-impact {
+    text-align: right;
+  }
+
+  .impact-metric {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    line-height: 1;
+  }
+
+  .metric-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+  }
+
+  .project-description {
+    margin-bottom: 2rem;
+  }
+
+  .project-description p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  .project-details {
+    margin-bottom: 2rem;
+  }
+
+  .detail-section {
+    margin-bottom: 2rem;
+  }
+
+  .detail-section h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+
+  .detail-section ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .detail-section li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .detail-section li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .metric-card {
+    background: var(--surface);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    border: 1px solid var(--border);
+  }
+
+  .metric-title {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+  }
+
+  .metric-change {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    line-height: 1;
+  }
+
+  .metric-detail {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+  }
+
+  .project-tech h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+
+  .tech-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .tech-category {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .tech-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    min-width: 120px;
+  }
+
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .project-metrics .metric {
+    font-size: 0.875rem;
+    color: var(--accent-color);
+    font-weight: 600;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .metrics-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .project-stats {
+      gap: 2rem;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+    }
+
+    .project-content {
+      padding: 2rem;
+    }
+
+    .project-header {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .project-impact {
+      text-align: left;
+    }
+
+    .impact-metric {
+      align-items: flex-start;
+    }
+
+    .metrics-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tech-category {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .tech-label {
+      min-width: auto;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .project-stats {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .metrics-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .metric-card {
+      padding: 1rem;
+    }
+  }
+</style>

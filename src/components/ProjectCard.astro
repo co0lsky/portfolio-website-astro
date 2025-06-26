@@ -1,0 +1,156 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  technologies: string[];
+  metrics?: string[];
+  featured?: boolean;
+  link?: string;
+}
+
+const { title, description, technologies, metrics = [], featured = false, link } = Astro.props;
+
+export const componentMeta = {
+  title: 'ProjectCard',
+  description: 'Reusable card component for displaying technical projects with metrics and technologies.',
+  props: [
+    { name: 'title', type: 'string', required: true, description: 'The project title.' },
+    { name: 'description', type: 'string', required: true, description: 'Project description.' },
+    { name: 'technologies', type: 'string[]', required: true, description: 'Array of technologies used.' },
+    { name: 'metrics', type: 'string[]', default: '[]', description: 'Optional array of project metrics.' },
+    { name: 'featured', type: 'boolean', default: 'false', description: 'Whether this is a featured project.' },
+    { name: 'link', type: 'string', default: 'undefined', description: 'Optional link to project details.' }
+  ]
+};
+
+const CardTag = link ? 'a' : 'div';
+---
+
+<CardTag 
+  class:list={['project-card', 'card', { 'featured': featured, 'clickable': link }]}
+  href={link}
+  target={link ? '_blank' : undefined}
+  rel={link ? 'noopener' : undefined}
+>
+  <div class="project-header">
+    <h3 class="project-title">{title}</h3>
+    {featured && <span class="featured-badge">Featured</span>}
+  </div>
+  
+  <p class="project-description">{description}</p>
+  
+  {metrics.length > 0 && (
+    <div class="project-metrics">
+      {metrics.map(metric => (
+        <span class="metric">{metric}</span>
+      ))}
+    </div>
+  )}
+  
+  <div class="project-technologies">
+    {technologies.map(tech => (
+      <span class="tag">{tech}</span>
+    ))}
+  </div>
+  
+  {link && (
+    <div class="project-link-indicator">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M7 17L17 7" />
+        <path d="M7 7h10v10" />
+      </svg>
+    </div>
+  )}
+</CardTag>
+
+<style>
+  .project-card {
+    position: relative;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .project-card.clickable:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .project-card.featured {
+    border-left: 4px solid var(--accent-color);
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .project-title {
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+  }
+
+  .featured-badge {
+    background: linear-gradient(135deg, var(--accent-color), #60a5fa);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .project-description {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .project-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .metric {
+    font-size: 0.875rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    background-color: rgba(59, 130, 246, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+  }
+
+  .project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .project-link-indicator {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+  }
+
+  .project-card.clickable:hover .project-link-indicator {
+    color: var(--accent-color);
+  }
+
+  @media (max-width: 768px) {
+    .project-header {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .project-title {
+      font-size: 1.125rem;
+    }
+  }
+</style>

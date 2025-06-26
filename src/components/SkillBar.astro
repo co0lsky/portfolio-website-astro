@@ -1,0 +1,76 @@
+---
+export interface Props {
+  skill: string;
+  level: number;
+  category?: string;
+}
+
+const { skill, level, category } = Astro.props;
+
+export const componentMeta = {
+  title: 'SkillBar',
+  description: 'Visual skill level indicator for technical expertise showcase.',
+  props: [
+    { name: 'skill', type: 'string', required: true, description: 'The name of the skill or technology.' },
+    { name: 'level', type: 'number', required: true, description: 'Skill level from 0-100.' },
+    { name: 'category', type: 'string', default: 'undefined', description: 'Optional category for the skill.' }
+  ]
+};
+---
+
+<div class="skill-bar-container">
+  <div class="skill-header">
+    <span class="skill-name">{skill}</span>
+    {category && <span class="skill-category">{category}</span>}
+    <span class="skill-level">{level}%</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style={`width: ${level}%`}></div>
+  </div>
+</div>
+
+<style>
+  .skill-bar-container {
+    margin-bottom: 1.5rem;
+  }
+
+  .skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .skill-name {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .skill-category {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    background-color: var(--surface);
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+  }
+
+  .skill-level {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--accent-color);
+  }
+
+  .skill-bar {
+    height: 8px;
+    background-color: var(--border-light);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color), #60a5fa);
+    border-radius: 4px;
+    transition: width 0.8s ease-out;
+  }
+</style>
